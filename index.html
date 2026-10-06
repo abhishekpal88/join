@@ -58,7 +58,7 @@
     .stat-lbl { font-size: 10px; color: #94a3b8; font-weight: 700; }
 
     /* CTA Button */
-    .btn-tg { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #00e676; color: #062412; text-decoration: none; padding: 15px; border-radius: 28px; font-size: 16px; font-weight: 800; box-shadow: 0 0 24px rgba(0, 230, 118, 0.35); transition: 0.2s; }
+    .btn-tg { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #00e676; color: #062412; text-decoration: none; padding: 15px; border-radius: 28px; font-size: 16px; font-weight: 800; box-shadow: 0 0 24px rgba(0, 230, 118, 0.35); transition: 0.2s; cursor: pointer; }
     .btn-tg:active { transform: scale(0.97); }
 
     /* Auto Redirect Timer Bar */
@@ -121,7 +121,7 @@
     </div>
 
     <!-- Direct Telegram CTA Button -->
-    <a id="tgLink" href="https://t.me/zeroworkinvest" class="btn-tg" onclick="triggerLead();">
+    <a id="tgLink" href="https://t.me/zeroworkinvest?text=Work%20from%20home%20zero%20invest%20work" class="btn-tg">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
       Join Telegram Channel
     </a>
@@ -142,13 +142,28 @@
   </div>
 
   <script>
-    var targetUrl = "https://t.me/zeroworkinvest";
+    var targetUrl = "https://t.me/zeroworkinvest?text=Work%20from%20home%20zero%20invest%20work";
+    var tgAppUrl = "tg://resolve?domain=zeroworkinvest&text=Work%20from%20home%20zero%20invest%20work";
+    var redirected = false;
 
-    function triggerLead() {
+    function triggerLeadAndRedirect() {
+      if (redirected) return;
+      redirected = true;
+
       if (typeof fbq === 'function') {
         fbq('track', 'Lead');
       }
+
+      window.location.href = tgAppUrl;
+      setTimeout(function() {
+        window.location.href = targetUrl;
+      }, 400);
     }
+
+    document.getElementById("tgLink").addEventListener("click", function(e) {
+      e.preventDefault();
+      triggerLeadAndRedirect();
+    });
 
     var seconds = 5;
     var countdown = setInterval(function() {
@@ -157,8 +172,7 @@
       if (el) el.innerText = seconds;
       if (seconds <= 0) {
         clearInterval(countdown);
-        triggerLead();
-        window.location.href = targetUrl;
+        triggerLeadAndRedirect();
       }
     }, 1000);
   </script>
