@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketEdge - Without Investment Work</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1427849735920848');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #0b0d0e; color: #ffffff; min-height: 100vh; overflow-x: hidden; }
+
+    /* Top Stock Ticker */
+    .ticker-wrap { width: 100%; background: #070809; border-bottom: 1px solid #1a1e22; overflow: hidden; white-space: nowrap; padding: 6px 0; font-size: 11px; font-weight: 600; }
+    .ticker-move { display: inline-block; animation: ticker 22s linear infinite; }
+    .ticker-item { display: inline-block; padding: 0 14px; }
+    .green { color: #00e676; }
+    .red { color: #ff5252; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* Main Container */
+    .container { max-width: 420px; margin: 0 auto; padding: 24px 16px; text-align: center; }
+
+    .logo-icon { width: 36px; height: 36px; margin: 0 auto 8px; color: #00e676; }
+    .brand-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .brand-title span { color: #00e676; }
+    .brand-sub { font-size: 11px; color: #9aa4af; font-weight: 700; letter-spacing: 1px; margin-top: 2px; }
+
+    .status-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #00e676; margin: 14px 0 16px; letter-spacing: 0.5px; }
+    .dot { width: 7px; height: 7px; background-color: #00e676; border-radius: 50%; box-shadow: 0 0 8px #00e676; }
+
+    h1 { font-size: 20px; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    h1 span { color: #c084fc; }
+    .desc { font-size: 13px; color: #9aa4af; line-height: 1.4; margin-bottom: 20px; }
+
+    /* 2x2 Feature Grid */
+    .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+    .box { background: #13171b; border: 1px solid #1f252b; border-radius: 10px; padding: 12px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #e2e8f0; }
+
+    /* 3-Col Stats Grid */
+    .grid-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+    .stat-box { background: #13171b; border: 1px solid #1f252b; border-radius: 10px; padding: 10px 4px; }
+    .stat-val { font-size: 15px; font-weight: 800; color: #00e676; margin-bottom: 2px; }
+    .stat-lbl { font-size: 10px; color: #94a3b8; font-weight: 700; }
+
+    /* CTA Button */
+    .btn-tg { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #00e676; color: #062412; text-decoration: none; padding: 15px; border-radius: 28px; font-size: 16px; font-weight: 800; box-shadow: 0 0 24px rgba(0, 230, 118, 0.35); transition: 0.2s; }
+    .btn-tg:active { transform: scale(0.97); }
+
+    /* Auto Redirect Timer Bar */
+    .timer-wrap { background: #13171b; border: 1px solid #1f252b; border-radius: 10px; padding: 10px; margin-top: 10px; font-size: 12px; color: #9aa4af; }
+    .progress-bg { width: 100%; height: 4px; background: #222a32; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+    .progress-fill { width: 0%; height: 100%; background: #00e676; animation: fillProgress 5s linear forwards; }
+    @keyframes fillProgress { 0% { width: 0%; } 100% { width: 100%; } }
+
+    /* Footer & Disclaimer */
+    .disclaimer { font-size: 10px; color: #64748b; line-height: 1.4; margin: 16px 0 12px; }
+    .ad-tag { display: inline-flex; align-items: center; gap: 6px; background: #13171b; border: 1px solid #1f252b; border-radius: 6px; padding: 5px 12px; font-size: 11px; color: #00e676; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Stock Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <span class="ticker-item">HDFC BANK <span class="green">▲0.48%</span></span>
+      <span class="ticker-item">NIFTY <span class="green">24,512 ▲0.62%</span></span>
+      <span class="ticker-item">SENSEX <span class="red">81,240 ▼0.14%</span></span>
+      <span class="ticker-item">BANKNIFTY <span class="green">53,190 ▲0.91%</span></span>
+      <span class="ticker-item">RELIANCE <span class="green">▲1.12%</span></span>
+      <span class="ticker-item">HDFC BANK <span class="green">▲0.48%</span></span>
+      <span class="ticker-item">NIFTY <span class="green">24,512 ▲0.62%</span></span>
+      <span class="ticker-item">SENSEX <span class="red">81,240 ▼0.14%</span></span>
+      <span class="ticker-item">BANKNIFTY <span class="green">53,190 ▲0.91%</span></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Icon & Brand Header -->
+    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+      <polyline points="17 6 23 6 23 12"></polyline>
+    </svg>
+    <div class="brand-title">Market<span>Edge</span></div>
+    <div class="brand-sub">WITHOUT INVESTMENT WORK</div>
+
+    <div class="status-tag">
+      <span class="dot"></span> CHANNEL ACTIVE NOW
+    </div>
+
+    <h1>Start earning <span>without any investment</span> — join now</h1>
+    <p class="desc">Simple daily tasks, zero cost to join. No spam, no hidden charges.</p>
+
+    <!-- 2x2 Feature Grid -->
+    <div class="grid-2x2">
+      <div class="box"><span>💰</span> Without Investment</div>
+      <div class="box"><span>📋</span> Daily Task</div>
+      <div class="box"><span>⚡</span> Instant Setup</div>
+      <div class="box"><span>🔒</span> Verified Channel</div>
+    </div>
+
+    <!-- 3-Col Stats Grid -->
+    <div class="grid-stats">
+      <div class="stat-box"><div class="stat-val">5K+</div><div class="stat-lbl">MEMBERS</div></div>
+      <div class="stat-box"><div class="stat-val">100%</div><div class="stat-lbl">FREE</div></div>
+      <div class="stat-box"><div class="stat-val">24/7</div><div class="stat-lbl">UPDATES</div></div>
+    </div>
+
+    <!-- Direct Telegram CTA Button -->
+    <a id="tgLink" href="https://t.me/zeroworkinvest" class="btn-tg" onclick="triggerLead();">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+      Join Telegram Channel
+    </a>
+
+    <!-- 5s Redirect Bar -->
+    <div class="timer-wrap">
+      Opening Telegram in <span id="count">5</span>s — or tap above
+      <div class="progress-bg"><div class="progress-fill"></div></div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <p class="disclaimer">Joining the channel is free. Results and earnings from any task can vary and are not guaranteed. Please do your own research before proceeding.</p>
+
+    <!-- Footer Tag -->
+    <div class="ad-tag">
+      <span>🛡️</span> Verified Community Link
+    </div>
+  </div>
+
+  <script>
+    var targetUrl = "https://t.me/zeroworkinvest";
+
+    function triggerLead() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    }
+
+    var seconds = 5;
+    var countdown = setInterval(function() {
+      seconds--;
+      var el = document.getElementById("count");
+      if (el) el.innerText = seconds;
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        triggerLead();
+        window.location.href = targetUrl;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
