@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1427849735920848');
+  fbq('init', '1012266775189437');
   fbq('track', 'PageView');
   </script>
   <!-- End Meta Pixel Code -->
@@ -150,10 +151,12 @@
       if (redirected) return;
       redirected = true;
 
+      // Meta Pixel Event Track
       if (typeof fbq === 'function') {
         fbq('track', 'Lead');
       }
 
+      // App deep-link trigger
       window.location.href = tgAppUrl;
       setTimeout(function() {
         window.location.href = targetUrl;
